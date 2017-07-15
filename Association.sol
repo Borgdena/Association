@@ -21,7 +21,7 @@ contract owned {
     }
 }
 
-contract tokenRecipient { 
+contract tokenRecipient {
     event receivedEther(address sender, uint amount);
     event receivedTokens(address _from, uint256 _value, address _token, bytes _extraData);
 
@@ -145,7 +145,7 @@ contract Association is owned, tokenRecipient {
         p.votes[voteID] = Vote({inSupport: supportsProposal, voter: msg.sender});
         p.voted[msg.sender] = true;
         p.numberOfVotes = voteID +1;
-        Voted(proposalNumber,  supportsProposal, msg.sender); 
+        Voted(proposalNumber,  supportsProposal, msg.sender);
         return voteID;
     }
 
